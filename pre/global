@@ -2,17 +2,17 @@
 
 ########################  PRE OUTSIDE
 
-_echot "------- ttf"
-_echo "Launch this following command in an other terminal:"
-_echoA "sudo apt install -y ttf-mscorefonts-installer"
-_askno "After it, Validate to continue"
+# _echot "------- ttf"
+# _echo "Launch this following command in an other terminal:"
+# _echoA "sudo apt install -y ttf-mscorefonts-installer"
+# _askno "After it, Validate to continue"
 
 ########################  MAIN
 
 _echot "------- system"
 packages="curl wget duf exfatprogs gnupg hfsprogs htop most ncdu pv testdisk tree"
 packages+=" git gparted tmux vim"
-packages+=" p7zip-full p7zip-rar pigz zip unzip rar unrar zstd"
+packages+=" p7zip-full p7zip-rar pigz zstd"
 # kpartx ntfsprogs grsync gtk2-engines-pixbuf libnss-myhostname atop fslint dstat icedtea-8-plugin
 _install_pcks ${packages}
 
