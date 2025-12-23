@@ -17,11 +17,6 @@ packages=" openjdk-21-jre"
 # sysstat
 _install_pcks ${packages}
 
-_echot "------- nautilus"
-packages="nautilus-admin nautilus-script-manager nautilus-scripts-manager nautilus-share"
-packages+=" nautilus-extension-gnome-terminal nautilus-wipe nautilus-hide"
-_install_pcks ${packages}
-
 ########################  CONF
 
 _echot "------- conf geany"
