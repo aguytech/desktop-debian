@@ -56,6 +56,10 @@ _evalr apt remove -y ${packages}
 _echot "------- non-free"
 _evalr sed -i "s|main |main non-free |" /etc/apt/sources.list
 
+_echot "------- apt stable-proposed-updates"
+sudo sh -c "echo '# stable-proposed-updates
+deb http://deb.debian.org/debian/ trixie-proposed-updates main non-free' > /etc/apt/sources.list"
+
 ########################  USER
 
 _echot "------- user paths"
