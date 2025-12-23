@@ -4,7 +4,7 @@
 
 file_meld_conf=${_PATH_BASE}/conf/soft/meld-perso-dark.style-scheme.xml
 file_aegisub_conf=${_PATH_BASE}/conf/soft/aegisub-config.json
-file_tmux_desktop=${_PATH_BASE}/xtra/org.gnome.Terminal-tmux.desktop
+file_tmux_desktop=${_PATH_BASE}/xtra/xfce4-terminal-tmux.desktop
 _require ${file_meld_conf} ${file_aegisub_conf} ${file_tmux_desktop}
 
 pth_icons=${_PATH_BASE}/icons
@@ -133,27 +133,7 @@ pth=${HOME}/.aegisub/
 _eval cp -a ${file_aegisub_conf} ${pth}
 _evalr chmod 644 ${pth}/${file_aegisub_conf##*/}
 
-_echot "------- gsettings textedit"
-options="custom-font 'Monospace 8'
-highlight-current-line true
-highlight-matching-brackets true
-indent-style 'tab'
-line-height 1.0
-restore-session true
-show-line-numbers true
-show-map true
-style-variant 'dark'
-tab-width 4"
-while read key value; do
-	_eval "gsettings set org.gnome.TextEditor ${key} ${value}"
-done <<< "$options"
-
 ########################  EXTERNAL
-
-_echot "------- languages"
-_echoA "Close language window after validation."
-_askno "Validate to continue"
-_eval gnome-language-selector
 
 _echot "------- QT5"
 _echoA "After validation, adjust settings for qt5 and close qt5ct window"
@@ -164,4 +144,3 @@ _echot "------- QT6"
 _echoA "After validation, adjust settings for qt6 and close qt6ct window"
 _askno "Validate to continue"
 qt6ct 2>/dev/null
-
